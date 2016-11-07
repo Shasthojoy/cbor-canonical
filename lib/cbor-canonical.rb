@@ -24,8 +24,11 @@ module CBOR
 
     module Hash_Canonical_CBOR
       def cbor_pre_canonicalize
-        Hash[map {|k, v| cc = k.to_canonical_cbor
-                         [cc.size, cc, k, v]}.
+        Hash[map {|k, v| 
+                  k = k.cbor_pre_canonicalize
+                  v = v.cbor_pre_canonicalize
+                  cc = k.to_cbor # already canonical
+                  [cc.size, cc, k, v]}.
              sort.map{|s, cc, k, v| [k, v]}]
       end
     end

@@ -3,6 +3,7 @@ require 'cbor-canonical'
 [[1], [false], [10.3], [10.5], [Float::NAN],
  [{a: 1, b: [1, 2]}],
  [{aa: 1, b: 2}, {b: 2, aa: 1}],
+ [{aa: 1, b: {mm: 2, m: 3}}, {b: {m: 3, mm: 2}, aa: 1}],
  [CBOR::Tagged.new(4711, {aa: 1, b: 2}),
   CBOR::Tagged.new(4711, {b: 2, aa: 1})],
 ].each do |ex1, ex2, ex3|

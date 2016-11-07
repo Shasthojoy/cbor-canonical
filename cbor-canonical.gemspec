@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "cbor-canonical"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.summary = "CBOR (Concise Binary Object Representation) canonical encoding"
   s.description = %q{cbor-canonical implements canonical encoding for CBOR, RFC 7049 Section 3.9}
   s.author = "Carsten Bormann"
